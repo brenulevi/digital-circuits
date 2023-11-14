@@ -1,0 +1,10 @@
+
+State Machine - |letter|state
+Name state.L state.V state.S state.P3 state.P2 state.P1 state.B 
+state.B 0 0 0 0 0 0 0 
+state.P1 0 0 0 0 0 1 1 
+state.P2 0 0 0 0 1 0 1 
+state.P3 0 0 0 1 0 0 1 
+state.S 0 0 1 0 0 0 1 
+state.V 0 1 0 0 0 0 1 
+state.L 1 0 0 0 0 0 1 

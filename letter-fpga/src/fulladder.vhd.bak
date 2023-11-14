@@ -1,0 +1,23 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity fulladder is
+	port (
+		A : std_logic;
+		B : std_logic;
+		Cin : std_logic;
+		Cout : std_logic;
+		S : std_logic
+	);
+end entity fulladder;
+
+architecture fulladder_behav of fulladder is
+	signal xor1, xor2, and1, and2 : std_logic;
+begin
+	xor1 <= A xor B;
+	xor2 <= xor1 xor Cin;
+	and1 <= xor1 and Cin;
+	and2 <= A and B;
+	Cout <= and1 or and2;
+	S <= xor2;
+end architecture fulladder_behav

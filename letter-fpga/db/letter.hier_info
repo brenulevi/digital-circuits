@@ -1,0 +1,380 @@
+|letter
+KEY[0] => mux:mux1.A
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+KEY[3] => counter:counter1.RST
+SW[0] => mux:mux1.SEL
+SW[1] => ~NO_FANOUT~
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+CLOCK_50 => mux:mux1.B
+HEX0[0] <= decodifier:decodifier4.OTPT[0]
+HEX0[1] <= decodifier:decodifier4.OTPT[1]
+HEX0[2] <= decodifier:decodifier4.OTPT[2]
+HEX0[3] <= decodifier:decodifier4.OTPT[3]
+HEX0[4] <= decodifier:decodifier4.OTPT[4]
+HEX0[5] <= decodifier:decodifier4.OTPT[5]
+HEX0[6] <= decodifier:decodifier4.OTPT[6]
+HEX1[0] <= decodifier:decodifier3.OTPT[0]
+HEX1[1] <= decodifier:decodifier3.OTPT[1]
+HEX1[2] <= decodifier:decodifier3.OTPT[2]
+HEX1[3] <= decodifier:decodifier3.OTPT[3]
+HEX1[4] <= decodifier:decodifier3.OTPT[4]
+HEX1[5] <= decodifier:decodifier3.OTPT[5]
+HEX1[6] <= decodifier:decodifier3.OTPT[6]
+HEX2[0] <= decodifier:decodifier2.OTPT[0]
+HEX2[1] <= decodifier:decodifier2.OTPT[1]
+HEX2[2] <= decodifier:decodifier2.OTPT[2]
+HEX2[3] <= decodifier:decodifier2.OTPT[3]
+HEX2[4] <= decodifier:decodifier2.OTPT[4]
+HEX2[5] <= decodifier:decodifier2.OTPT[5]
+HEX2[6] <= decodifier:decodifier2.OTPT[6]
+HEX3[0] <= decodifier:decodifier1.OTPT[0]
+HEX3[1] <= decodifier:decodifier1.OTPT[1]
+HEX3[2] <= decodifier:decodifier1.OTPT[2]
+HEX3[3] <= decodifier:decodifier1.OTPT[3]
+HEX3[4] <= decodifier:decodifier1.OTPT[4]
+HEX3[5] <= decodifier:decodifier1.OTPT[5]
+HEX3[6] <= decodifier:decodifier1.OTPT[6]
+LEDR[0] <= adder:adder1.OTPT[0]
+LEDR[1] <= adder:adder1.OTPT[1]
+LEDR[2] <= adder:adder1.OTPT[2]
+LEDR[3] <= adder:adder2.OTPT[0]
+LEDR[4] <= adder:adder2.OTPT[1]
+LEDR[5] <= adder:adder2.OTPT[2]
+LEDR[6] <= adder:adder3.OTPT[0]
+LEDR[7] <= adder:adder3.OTPT[1]
+LEDR[8] <= adder:adder3.OTPT[2]
+LEDR[9] <= mux:mux1.OTPT
+LEDG[0] <= counter:counter1.OTPT[0]
+LEDG[1] <= counter:counter1.OTPT[1]
+LEDG[2] <= counter:counter1.OTPT[2]
+LEDG[3] <= <GND>
+LEDG[4] <= <GND>
+LEDG[5] <= <GND>
+LEDG[6] <= <GND>
+LEDG[7] <= <GND>
+
+
+|letter|mux:mux1
+A => OTPT.DATAB
+B => OTPT.DATAA
+SEL => OTPT.OUTPUTSELECT
+OTPT <= OTPT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|letter|counter:counter1
+CLK => flipflop:flipflop1.CLK
+RST => ~NO_FANOUT~
+OTPT[0] <= flipflop:flipflop1.Q
+OTPT[1] <= flipflop:flipflop2.Q
+OTPT[2] <= flipflop:flipflop3.Q
+
+
+|letter|counter:counter1|flipflop:flipflop1
+CLK => \main:sQ.CLK
+J => main.IN0
+J => main.IN0
+J => main.IN0
+J => main.IN0
+K => main.IN1
+K => main.IN1
+K => main.IN1
+K => main.IN1
+Q <= \main:sQ.DB_MAX_OUTPUT_PORT_TYPE
+nQ <= \main:sQ.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|letter|counter:counter1|flipflop:flipflop2
+CLK => \main:sQ.CLK
+J => main.IN0
+J => main.IN0
+J => main.IN0
+J => main.IN0
+K => main.IN1
+K => main.IN1
+K => main.IN1
+K => main.IN1
+Q <= \main:sQ.DB_MAX_OUTPUT_PORT_TYPE
+nQ <= \main:sQ.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|letter|counter:counter1|flipflop:flipflop3
+CLK => \main:sQ.CLK
+J => main.IN0
+J => main.IN0
+J => main.IN0
+J => main.IN0
+K => main.IN1
+K => main.IN1
+K => main.IN1
+K => main.IN1
+Q <= \main:sQ.DB_MAX_OUTPUT_PORT_TYPE
+nQ <= \main:sQ.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|letter|adder:adder1
+N[0] => fulladder:fulladder1.A
+N[1] => fulladder:fulladder2.A
+N[2] => fulladder:fulladder3.A
+S[0] => fulladder:fulladder1.B
+S[1] => fulladder:fulladder2.B
+S[2] => fulladder:fulladder3.B
+OTPT[0] <= fulladder:fulladder1.S
+OTPT[1] <= fulladder:fulladder2.S
+OTPT[2] <= fulladder:fulladder3.S
+
+
+|letter|adder:adder1|fulladder:fulladder1
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|letter|adder:adder1|fulladder:fulladder2
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|letter|adder:adder1|fulladder:fulladder3
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|letter|adder:adder2
+N[0] => fulladder:fulladder1.A
+N[1] => fulladder:fulladder2.A
+N[2] => fulladder:fulladder3.A
+S[0] => fulladder:fulladder1.B
+S[1] => fulladder:fulladder2.B
+S[2] => fulladder:fulladder3.B
+OTPT[0] <= fulladder:fulladder1.S
+OTPT[1] <= fulladder:fulladder2.S
+OTPT[2] <= fulladder:fulladder3.S
+
+
+|letter|adder:adder2|fulladder:fulladder1
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|letter|adder:adder2|fulladder:fulladder2
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|letter|adder:adder2|fulladder:fulladder3
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|letter|adder:adder3
+N[0] => fulladder:fulladder1.A
+N[1] => fulladder:fulladder2.A
+N[2] => fulladder:fulladder3.A
+S[0] => fulladder:fulladder1.B
+S[1] => fulladder:fulladder2.B
+S[2] => fulladder:fulladder3.B
+OTPT[0] <= fulladder:fulladder1.S
+OTPT[1] <= fulladder:fulladder2.S
+OTPT[2] <= fulladder:fulladder3.S
+
+
+|letter|adder:adder3|fulladder:fulladder1
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|letter|adder:adder3|fulladder:fulladder2
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|letter|adder:adder3|fulladder:fulladder3
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|letter|decodifier:decodifier1
+A[0] => Mux0.IN10
+A[0] => Mux1.IN10
+A[0] => Mux2.IN10
+A[0] => Mux3.IN10
+A[0] => Mux4.IN10
+A[0] => Mux5.IN10
+A[0] => Mux6.IN10
+A[1] => Mux0.IN9
+A[1] => Mux1.IN9
+A[1] => Mux2.IN9
+A[1] => Mux3.IN9
+A[1] => Mux4.IN9
+A[1] => Mux5.IN9
+A[1] => Mux6.IN9
+A[2] => Mux0.IN8
+A[2] => Mux1.IN8
+A[2] => Mux2.IN8
+A[2] => Mux3.IN8
+A[2] => Mux4.IN8
+A[2] => Mux5.IN8
+A[2] => Mux6.IN8
+OTPT[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|letter|decodifier:decodifier2
+A[0] => Mux0.IN10
+A[0] => Mux1.IN10
+A[0] => Mux2.IN10
+A[0] => Mux3.IN10
+A[0] => Mux4.IN10
+A[0] => Mux5.IN10
+A[0] => Mux6.IN10
+A[1] => Mux0.IN9
+A[1] => Mux1.IN9
+A[1] => Mux2.IN9
+A[1] => Mux3.IN9
+A[1] => Mux4.IN9
+A[1] => Mux5.IN9
+A[1] => Mux6.IN9
+A[2] => Mux0.IN8
+A[2] => Mux1.IN8
+A[2] => Mux2.IN8
+A[2] => Mux3.IN8
+A[2] => Mux4.IN8
+A[2] => Mux5.IN8
+A[2] => Mux6.IN8
+OTPT[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|letter|decodifier:decodifier3
+A[0] => Mux0.IN10
+A[0] => Mux1.IN10
+A[0] => Mux2.IN10
+A[0] => Mux3.IN10
+A[0] => Mux4.IN10
+A[0] => Mux5.IN10
+A[0] => Mux6.IN10
+A[1] => Mux0.IN9
+A[1] => Mux1.IN9
+A[1] => Mux2.IN9
+A[1] => Mux3.IN9
+A[1] => Mux4.IN9
+A[1] => Mux5.IN9
+A[1] => Mux6.IN9
+A[2] => Mux0.IN8
+A[2] => Mux1.IN8
+A[2] => Mux2.IN8
+A[2] => Mux3.IN8
+A[2] => Mux4.IN8
+A[2] => Mux5.IN8
+A[2] => Mux6.IN8
+OTPT[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|letter|decodifier:decodifier4
+A[0] => Mux0.IN10
+A[0] => Mux1.IN10
+A[0] => Mux2.IN10
+A[0] => Mux3.IN10
+A[0] => Mux4.IN10
+A[0] => Mux5.IN10
+A[0] => Mux6.IN10
+A[1] => Mux0.IN9
+A[1] => Mux1.IN9
+A[1] => Mux2.IN9
+A[1] => Mux3.IN9
+A[1] => Mux4.IN9
+A[1] => Mux5.IN9
+A[1] => Mux6.IN9
+A[2] => Mux0.IN8
+A[2] => Mux1.IN8
+A[2] => Mux2.IN8
+A[2] => Mux3.IN8
+A[2] => Mux4.IN8
+A[2] => Mux5.IN8
+A[2] => Mux6.IN8
+OTPT[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+OTPT[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
