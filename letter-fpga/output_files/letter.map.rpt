@@ -1,5 +1,5 @@
 Analysis & Synthesis report for letter
-Tue Nov 14 19:20:38 2023
+Thu Nov 16 20:41:39 2023
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -13,17 +13,20 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Port Connectivity Checks: "adder:adder3"
- 10. Port Connectivity Checks: "adder:adder2"
- 11. Port Connectivity Checks: "adder:adder1|fulladder:fulladder3"
- 12. Port Connectivity Checks: "adder:adder1|fulladder:fulladder1"
- 13. Port Connectivity Checks: "adder:adder1"
- 14. Port Connectivity Checks: "counter:counter1|flipflop:flipflop3"
- 15. Port Connectivity Checks: "counter:counter1|flipflop:flipflop2"
- 16. Port Connectivity Checks: "counter:counter1|flipflop:flipflop1"
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+  8. Analysis & Synthesis IP Cores Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: clock_counter:clock_counter1|lpm_counter:LPM_COUNTER_component
+ 12. Port Connectivity Checks: "adder:adder3"
+ 13. Port Connectivity Checks: "adder:adder2"
+ 14. Port Connectivity Checks: "adder:adder1|fulladder:fulladder3"
+ 15. Port Connectivity Checks: "adder:adder1|fulladder:fulladder1"
+ 16. Port Connectivity Checks: "adder:adder1"
+ 17. Port Connectivity Checks: "counter:counter1|flipflop:flipflop3"
+ 18. Port Connectivity Checks: "counter:counter1|flipflop:flipflop2"
+ 19. Port Connectivity Checks: "counter:counter1|flipflop:flipflop1"
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -49,15 +52,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 14 19:20:38 2023      ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov 16 20:41:39 2023      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; letter                                     ;
 ; Top-level Entity Name              ; letter                                     ;
 ; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; 36                                         ;
-;     Total combinational functions  ; 36                                         ;
-;     Dedicated logic registers      ; 3                                          ;
-; Total registers                    ; 3                                          ;
+; Total logic elements               ; 59                                         ;
+;     Total combinational functions  ; 59                                         ;
+;     Dedicated logic registers      ; 26                                         ;
+; Total registers                    ; 26                                         ;
 ; Total pins                         ; 61                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
@@ -162,19 +165,31 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                 ;
-+----------------------------------+-----------------+-----------------+---------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path          ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------+---------+
-; src/letter.vhd                   ; yes             ; User VHDL File  ; C:/dev/letter-fpga/src/letter.vhd     ;         ;
-; src/mux.vhd                      ; yes             ; User VHDL File  ; C:/dev/letter-fpga/src/mux.vhd        ;         ;
-; src/counter.vhd                  ; yes             ; User VHDL File  ; C:/dev/letter-fpga/src/counter.vhd    ;         ;
-; src/decodifier.vhd               ; yes             ; User VHDL File  ; C:/dev/letter-fpga/src/decodifier.vhd ;         ;
-; src/adder.vhd                    ; yes             ; User VHDL File  ; C:/dev/letter-fpga/src/adder.vhd      ;         ;
-; src/flipflop.vhd                 ; yes             ; User VHDL File  ; C:/dev/letter-fpga/src/flipflop.vhd   ;         ;
-; src/fulladder.vhd                ; yes             ; User VHDL File  ; C:/dev/letter-fpga/src/fulladder.vhd  ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+; src/clock_counter.vhd            ; yes             ; User Wizard-Generated File   ; C:/dev/digital-circuits/letter-fpga/src/clock_counter.vhd              ;         ;
+; src/letter.vhd                   ; yes             ; User VHDL File               ; C:/dev/digital-circuits/letter-fpga/src/letter.vhd                     ;         ;
+; src/mux.vhd                      ; yes             ; User VHDL File               ; C:/dev/digital-circuits/letter-fpga/src/mux.vhd                        ;         ;
+; src/counter.vhd                  ; yes             ; User VHDL File               ; C:/dev/digital-circuits/letter-fpga/src/counter.vhd                    ;         ;
+; src/decodifier.vhd               ; yes             ; User VHDL File               ; C:/dev/digital-circuits/letter-fpga/src/decodifier.vhd                 ;         ;
+; src/adder.vhd                    ; yes             ; User VHDL File               ; C:/dev/digital-circuits/letter-fpga/src/adder.vhd                      ;         ;
+; src/flipflop.vhd                 ; yes             ; User VHDL File               ; C:/dev/digital-circuits/letter-fpga/src/flipflop.vhd                   ;         ;
+; src/fulladder.vhd                ; yes             ; User VHDL File               ; C:/dev/digital-circuits/letter-fpga/src/fulladder.vhd                  ;         ;
+; lpm_counter.tdf                  ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_counter.tdf         ;         ;
+; lpm_constant.inc                 ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_constant.inc        ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_decode.inc          ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; cmpconst.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/cmpconst.inc            ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_compare.inc         ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_counter.inc         ;         ;
+; dffeea.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/dffeea.inc              ;         ;
+; alt_counter_stratix.inc          ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/alt_counter_stratix.inc ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc          ;         ;
+; db/cntr_cmh.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/dev/digital-circuits/letter-fpga/db/cntr_cmh.tdf                    ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------------------------------------+
@@ -182,55 +197,77 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+---------------------------------------+
 ; Resource                                    ; Usage                                 ;
 +---------------------------------------------+---------------------------------------+
-; Estimated Total logic elements              ; 36                                    ;
+; Estimated Total logic elements              ; 59                                    ;
 ;                                             ;                                       ;
-; Total combinational functions               ; 36                                    ;
+; Total combinational functions               ; 59                                    ;
 ; Logic element usage by number of LUT inputs ;                                       ;
 ;     -- 4 input functions                    ; 0                                     ;
 ;     -- 3 input functions                    ; 30                                    ;
-;     -- <=2 input functions                  ; 6                                     ;
+;     -- <=2 input functions                  ; 29                                    ;
 ;                                             ;                                       ;
 ; Logic elements by mode                      ;                                       ;
-;     -- normal mode                          ; 36                                    ;
-;     -- arithmetic mode                      ; 0                                     ;
+;     -- normal mode                          ; 37                                    ;
+;     -- arithmetic mode                      ; 22                                    ;
 ;                                             ;                                       ;
-; Total registers                             ; 3                                     ;
-;     -- Dedicated logic registers            ; 3                                     ;
+; Total registers                             ; 26                                    ;
+;     -- Dedicated logic registers            ; 26                                    ;
 ;     -- I/O registers                        ; 0                                     ;
 ;                                             ;                                       ;
 ; I/O pins                                    ; 61                                    ;
 ; Embedded Multiplier 9-bit elements          ; 0                                     ;
 ; Maximum fan-out node                        ; counter:counter1|flipflop:flipflop1|Q ;
 ; Maximum fan-out                             ; 37                                    ;
-; Total fan-out                               ; 146                                   ;
-; Average fan-out                             ; 1.46                                  ;
+; Total fan-out                               ; 237                                   ;
+; Average fan-out                             ; 1.62                                  ;
 +---------------------------------------------+---------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                   ;
-+------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
-; Compilation Hierarchy Node   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Library Name ;
-+------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
-; |letter                      ; 36 (0)            ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 61   ; 0            ; |letter                                     ;              ;
-;    |adder:adder1|            ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|adder:adder1                        ;              ;
-;       |fulladder:fulladder3| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|adder:adder1|fulladder:fulladder3   ;              ;
-;    |adder:adder2|            ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|adder:adder2                        ;              ;
-;       |fulladder:fulladder3| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|adder:adder2|fulladder:fulladder3   ;              ;
-;    |adder:adder3|            ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|adder:adder3                        ;              ;
-;       |fulladder:fulladder2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|adder:adder3|fulladder:fulladder2   ;              ;
-;       |fulladder:fulladder3| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|adder:adder3|fulladder:fulladder3   ;              ;
-;    |counter:counter1|        ; 3 (0)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|counter:counter1                    ;              ;
-;       |flipflop:flipflop1|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|counter:counter1|flipflop:flipflop1 ;              ;
-;       |flipflop:flipflop2|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|counter:counter1|flipflop:flipflop2 ;              ;
-;       |flipflop:flipflop3|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|counter:counter1|flipflop:flipflop3 ;              ;
-;    |decodifier:decodifier1|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|decodifier:decodifier1              ;              ;
-;    |decodifier:decodifier2|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|decodifier:decodifier2              ;              ;
-;    |decodifier:decodifier3|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|decodifier:decodifier3              ;              ;
-;    |decodifier:decodifier4|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|decodifier:decodifier4              ;              ;
-;    |mux:mux1|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|mux:mux1                            ;              ;
-+------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                   ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                            ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------+--------------+
+; |letter                                   ; 59 (0)            ; 26 (0)       ; 0           ; 0            ; 0       ; 0         ; 61   ; 0            ; |letter                                                                                        ;              ;
+;    |adder:adder1|                         ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|adder:adder1                                                                           ;              ;
+;       |fulladder:fulladder3|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|adder:adder1|fulladder:fulladder3                                                      ;              ;
+;    |adder:adder2|                         ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|adder:adder2                                                                           ;              ;
+;       |fulladder:fulladder3|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|adder:adder2|fulladder:fulladder3                                                      ;              ;
+;    |adder:adder3|                         ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|adder:adder3                                                                           ;              ;
+;       |fulladder:fulladder2|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|adder:adder3|fulladder:fulladder2                                                      ;              ;
+;       |fulladder:fulladder3|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|adder:adder3|fulladder:fulladder3                                                      ;              ;
+;    |clock_counter:clock_counter1|         ; 23 (0)            ; 23 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|clock_counter:clock_counter1                                                           ;              ;
+;       |lpm_counter:LPM_COUNTER_component| ; 23 (0)            ; 23 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|clock_counter:clock_counter1|lpm_counter:LPM_COUNTER_component                         ;              ;
+;          |cntr_cmh:auto_generated|        ; 23 (23)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|clock_counter:clock_counter1|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated ;              ;
+;    |counter:counter1|                     ; 3 (0)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|counter:counter1                                                                       ;              ;
+;       |flipflop:flipflop1|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|counter:counter1|flipflop:flipflop1                                                    ;              ;
+;       |flipflop:flipflop2|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|counter:counter1|flipflop:flipflop2                                                    ;              ;
+;       |flipflop:flipflop3|                ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|counter:counter1|flipflop:flipflop3                                                    ;              ;
+;    |decodifier:decodifier1|               ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|decodifier:decodifier1                                                                 ;              ;
+;    |decodifier:decodifier2|               ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|decodifier:decodifier2                                                                 ;              ;
+;    |decodifier:decodifier3|               ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|decodifier:decodifier3                                                                 ;              ;
+;    |decodifier:decodifier4|               ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|decodifier:decodifier4                                                                 ;              ;
+;    |mux:mux1|                             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |letter|mux:mux1                                                                               ;              ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                            ;
++--------+--------------+---------+--------------+--------------+--------------------------------------+-----------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                      ; IP Include File                                           ;
++--------+--------------+---------+--------------+--------------+--------------------------------------+-----------------------------------------------------------+
+; Altera ; LPM_COUNTER  ; N/A     ; N/A          ; N/A          ; |letter|clock_counter:clock_counter1 ; C:/dev/digital-circuits/letter-fpga/src/clock_counter.vhd ;
++--------+--------------+---------+--------------+--------------+--------------------------------------+-----------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                         ;
++-------------------------------------------------------------------------------------------------------+--------------------+
+; Register name                                                                                         ; Reason for Removal ;
++-------------------------------------------------------------------------------------------------------+--------------------+
+; clock_counter:clock_counter1|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23..25] ; Lost fanout        ;
+; Total Number of Removed Registers = 3                                                                 ;                    ;
++-------------------------------------------------------------------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -238,7 +275,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 3     ;
+; Total registers                              ; 26    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -246,6 +283,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_counter:clock_counter1|lpm_counter:LPM_COUNTER_component ;
++------------------------+-------------+----------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                 ;
++------------------------+-------------+----------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                         ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                       ;
+; LPM_WIDTH              ; 26          ; Signed Integer                                                       ;
+; LPM_DIRECTION          ; UP          ; Untyped                                                              ;
+; LPM_MODULUS            ; 0           ; Untyped                                                              ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                                              ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                                              ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                                              ;
+; DEVICE_FAMILY          ; Cyclone II  ; Untyped                                                              ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                              ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                                   ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                                   ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                                              ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                                              ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                                              ;
+; CBXI_PARAMETER         ; cntr_cmh    ; Untyped                                                              ;
++------------------------+-------------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------------------+
@@ -343,9 +407,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Tue Nov 14 19:20:37 2023
+    Info: Processing started: Thu Nov 16 20:41:37 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off letter-fpga -c letter
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file src/clock_counter.vhd
+    Info (12022): Found design unit 1: clock_counter-SYN
+    Info (12023): Found entity 1: clock_counter
 Info (12021): Found 2 design units, including 1 entities, in source file src/letter.vhd
     Info (12022): Found design unit 1: letter-letter_arc
     Info (12023): Found entity 1: letter
@@ -370,6 +437,17 @@ Info (12021): Found 2 design units, including 1 entities, in source file src/ful
     Info (12023): Found entity 1: fulladder
 Info (12127): Elaborating entity "letter" for the top level hierarchy
 Warning (10873): Using initial value X (don't care) for net "LEDG[7..3]" at letter.vhd(14)
+Info (12128): Elaborating entity "clock_counter" for hierarchy "clock_counter:clock_counter1"
+Info (12128): Elaborating entity "lpm_counter" for hierarchy "clock_counter:clock_counter1|lpm_counter:LPM_COUNTER_component"
+Info (12130): Elaborated megafunction instantiation "clock_counter:clock_counter1|lpm_counter:LPM_COUNTER_component"
+Info (12133): Instantiated megafunction "clock_counter:clock_counter1|lpm_counter:LPM_COUNTER_component" with the following parameter:
+    Info (12134): Parameter "lpm_direction" = "UP"
+    Info (12134): Parameter "lpm_port_updown" = "PORT_UNUSED"
+    Info (12134): Parameter "lpm_type" = "LPM_COUNTER"
+    Info (12134): Parameter "lpm_width" = "26"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_cmh.tdf
+    Info (12023): Found entity 1: cntr_cmh
+Info (12128): Elaborating entity "cntr_cmh" for hierarchy "clock_counter:clock_counter1|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated"
 Info (12128): Elaborating entity "mux" for hierarchy "mux:mux1"
 Info (12128): Elaborating entity "counter" for hierarchy "counter:counter1"
 Warning (10036): Verilog HDL or VHDL warning at counter.vhd(22): object "nQ3" assigned a value but never read
@@ -386,6 +464,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDG[5]" is stuck at GND
     Warning (13410): Pin "LEDG[6]" is stuck at GND
     Warning (13410): Pin "LEDG[7]" is stuck at GND
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 12 input pin(s) that do not drive logic
@@ -401,14 +480,14 @@ Warning (21074): Design contains 12 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]"
     Warning (15610): No output dependent on input pin "SW[8]"
     Warning (15610): No output dependent on input pin "SW[9]"
-Info (21057): Implemented 97 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 120 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 46 output pins
-    Info (21061): Implemented 36 logic cells
+    Info (21061): Implemented 59 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 26 warnings
-    Info: Peak virtual memory: 4627 megabytes
-    Info: Processing ended: Tue Nov 14 19:20:38 2023
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 4661 megabytes
+    Info: Processing ended: Thu Nov 16 20:41:39 2023
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

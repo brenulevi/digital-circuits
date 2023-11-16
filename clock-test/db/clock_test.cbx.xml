@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="clock_test">
+		<CBX_INST_ENTRY INSTANCE_NAME="|clock_test|my_counter:clkdiv|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_cmh.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

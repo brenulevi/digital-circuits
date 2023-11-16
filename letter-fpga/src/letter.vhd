@@ -17,6 +17,13 @@ end entity letter;
 
 architecture letter_arc of letter is
 
+	component clock_counter is
+		port (
+			CLOCK_50 : in std_logic;
+			CLOCK_1HZ : out std_logic
+		);
+	end component clock_counter;
+
 	component mux is
 		port (
 			A,B, SEL: in std_logic;
@@ -46,15 +53,19 @@ architecture letter_arc of letter is
 		);
 	end component decodifier;
 
-	signal MUX_INPT : std_logic;
 	signal MUX_OTPT : std_logic;
 	signal COUNTER_OTPT : std_logic_vector(2 downto 0);
 	signal ADDER1_OTPT : std_logic_vector(2 downto 0);
 	signal ADDER2_OTPT : std_logic_vector(2 downto 0);
 	signal ADDER3_OTPT : std_logic_vector(2 downto 0);
+	signal CLOCK_1HZ : std_logic;
+	signal clk : std_logic;
 begin
+
+	clock_counter1 : clock_counter port map (CLOCK_50 => CLOCK_50, CLOCK_1HZ => CLOCK_1HZ);
+	
 	-- 1 mux (selector between auto clock and manual clock based on switch (SW(0)))
-	mux1: mux port map (A => not KEY(0), B => CLOCK_50, SEL => SW(0), OTPT => MUX_OTPT);
+	mux1: mux port map (A => not KEY(0), B => CLOCK_1HZ, SEL => SW(0), OTPT => MUX_OTPT);
 	
 	-- 1 instance of counter (0 to 7 | 4 bits)
 	counter1 : counter port map (CLK => MUX_OTPT, RST => not KEY(3), OTPT => COUNTER_OTPT);

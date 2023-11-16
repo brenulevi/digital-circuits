@@ -1,0 +1,1011 @@
+TimeQuest Timing Analyzer report for clock_test
+Thu Nov 16 20:12:51 2023
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'CLOCK_50'
+ 12. Slow Model Hold: 'CLOCK_50'
+ 13. Slow Model Minimum Pulse Width: 'CLOCK_50'
+ 14. Clock to Output Times
+ 15. Minimum Clock to Output Times
+ 16. Fast Model Setup Summary
+ 17. Fast Model Hold Summary
+ 18. Fast Model Recovery Summary
+ 19. Fast Model Removal Summary
+ 20. Fast Model Minimum Pulse Width Summary
+ 21. Fast Model Setup: 'CLOCK_50'
+ 22. Fast Model Hold: 'CLOCK_50'
+ 23. Fast Model Minimum Pulse Width: 'CLOCK_50'
+ 24. Clock to Output Times
+ 25. Minimum Clock to Output Times
+ 26. Multicorner Timing Analysis Summary
+ 27. Clock to Output Times
+ 28. Minimum Clock to Output Times
+ 29. Setup Transfers
+ 30. Hold Transfers
+ 31. Report TCCS
+ 32. Report RSKM
+ 33. Unconstrained Paths
+ 34. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name      ; clock_test                                         ;
+; Device Family      ; Cyclone II                                         ;
+; Device Name        ; EP2C20F484C7                                       ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; CLOCK_50   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 257.6 MHz ; 257.6 MHz       ; CLOCK_50   ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------+
+; Slow Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -2.882 ; -45.033       ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Slow Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.960 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.631 ; -33.403            ;
++----------+--------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLOCK_50'                                                                                                                                                                                                                                   ;
++--------+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                              ; To Node                                                                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.882 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.916      ;
+; -2.802 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.836      ;
+; -2.757 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.791      ;
+; -2.722 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.756      ;
+; -2.722 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.756      ;
+; -2.677 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.711      ;
+; -2.642 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.676      ;
+; -2.642 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.676      ;
+; -2.642 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.676      ;
+; -2.597 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.631      ;
+; -2.562 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.596      ;
+; -2.562 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.596      ;
+; -2.562 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.596      ;
+; -2.524 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.558      ;
+; -2.517 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.551      ;
+; -2.482 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.516      ;
+; -2.482 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.516      ;
+; -2.444 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.478      ;
+; -2.437 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.471      ;
+; -2.402 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.436      ;
+; -2.402 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.436      ;
+; -2.388 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.422      ;
+; -2.387 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.421      ;
+; -2.364 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.398      ;
+; -2.322 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.356      ;
+; -2.308 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.342      ;
+; -2.307 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.341      ;
+; -2.284 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.318      ;
+; -2.263 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.297      ;
+; -2.263 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.297      ;
+; -2.228 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.262      ;
+; -2.228 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.262      ;
+; -2.228 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.262      ;
+; -2.227 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.261      ;
+; -2.204 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.238      ;
+; -2.183 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.217      ;
+; -2.183 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.217      ;
+; -2.148 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.182      ;
+; -2.148 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.182      ;
+; -2.148 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.182      ;
+; -2.148 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.182      ;
+; -2.147 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.181      ;
+; -2.103 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.137      ;
+; -2.103 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.137      ;
+; -2.103 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.137      ;
+; -2.068 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.102      ;
+; -2.068 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.102      ;
+; -2.068 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.102      ;
+; -2.068 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.102      ;
+; -2.068 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.102      ;
+; -2.067 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.101      ;
+; -2.030 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.064      ;
+; -2.023 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.057      ;
+; -2.023 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.057      ;
+; -2.023 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.057      ;
+; -1.988 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.022      ;
+; -1.988 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.022      ;
+; -1.988 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.022      ;
+; -1.988 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.022      ;
+; -1.988 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.022      ;
+; -1.950 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.984      ;
+; -1.948 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.982      ;
+; -1.943 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.977      ;
+; -1.943 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.977      ;
+; -1.943 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.977      ;
+; -1.908 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.942      ;
+; -1.908 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.942      ;
+; -1.908 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.942      ;
+; -1.908 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.942      ;
+; -1.908 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.942      ;
+; -1.893 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.927      ;
+; -1.870 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.904      ;
+; -1.868 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.902      ;
+; -1.868 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.902      ;
+; -1.863 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.897      ;
+; -1.863 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.897      ;
+; -1.828 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.862      ;
+; -1.828 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.862      ;
+; -1.828 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.862      ;
+; -1.828 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.862      ;
+; -1.813 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.847      ;
+; -1.807 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.841      ;
+; -1.790 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.824      ;
+; -1.788 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.822      ;
+; -1.788 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.822      ;
+; -1.783 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.817      ;
+; -1.783 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.817      ;
+; -1.769 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.803      ;
+; -1.748 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.782      ;
+; -1.748 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.782      ;
+; -1.748 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.782      ;
+; -1.734 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.768      ;
+; -1.733 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.767      ;
+; -1.727 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.761      ;
+; -1.710 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.744      ;
+; -1.708 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.742      ;
+; -1.708 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.742      ;
+; -1.703 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.737      ;
+; -1.689 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.723      ;
+; -1.668 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.702      ;
++--------+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLOCK_50'                                                                                                                                                                                                                                   ;
++-------+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                              ; To Node                                                                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.960 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.246      ;
+; 0.964 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.250      ;
+; 0.964 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.250      ;
+; 0.964 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.250      ;
+; 0.964 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.250      ;
+; 0.967 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.253      ;
+; 0.968 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.254      ;
+; 0.968 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.254      ;
+; 0.969 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.255      ;
+; 0.969 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.255      ;
+; 0.969 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.255      ;
+; 0.969 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.255      ;
+; 0.969 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.255      ;
+; 0.969 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.255      ;
+; 1.007 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.293      ;
+; 1.007 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.293      ;
+; 1.008 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.294      ;
+; 1.008 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.294      ;
+; 1.008 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.294      ;
+; 1.008 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.294      ;
+; 1.008 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.294      ;
+; 1.008 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.294      ;
+; 1.008 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.294      ;
+; 1.008 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.294      ;
+; 1.011 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.297      ;
+; 1.016 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.302      ;
+; 1.392 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.678      ;
+; 1.396 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.682      ;
+; 1.396 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.682      ;
+; 1.396 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.682      ;
+; 1.399 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.685      ;
+; 1.400 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.686      ;
+; 1.400 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.686      ;
+; 1.401 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.687      ;
+; 1.401 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.687      ;
+; 1.401 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.687      ;
+; 1.401 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.687      ;
+; 1.440 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.726      ;
+; 1.440 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.726      ;
+; 1.441 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.727      ;
+; 1.441 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.727      ;
+; 1.441 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.727      ;
+; 1.441 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.727      ;
+; 1.441 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.727      ;
+; 1.441 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.727      ;
+; 1.441 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.727      ;
+; 1.441 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.727      ;
+; 1.441 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.727      ;
+; 1.472 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.758      ;
+; 1.476 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.762      ;
+; 1.476 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.762      ;
+; 1.476 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.762      ;
+; 1.479 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.765      ;
+; 1.480 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.766      ;
+; 1.480 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.766      ;
+; 1.481 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.767      ;
+; 1.481 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.767      ;
+; 1.497 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.783      ;
+; 1.502 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.788      ;
+; 1.505 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.787      ;
+; 1.520 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.806      ;
+; 1.520 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.806      ;
+; 1.521 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.807      ;
+; 1.521 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.807      ;
+; 1.521 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.807      ;
+; 1.521 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.807      ;
+; 1.521 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.807      ;
+; 1.521 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.807      ;
+; 1.521 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.807      ;
+; 1.552 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.838      ;
+; 1.556 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.842      ;
+; 1.556 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.842      ;
+; 1.556 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.842      ;
+; 1.559 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.845      ;
+; 1.560 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.846      ;
+; 1.560 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.846      ;
+; 1.561 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.847      ;
+; 1.566 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.848      ;
+; 1.577 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.863      ;
+; 1.582 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.868      ;
+; 1.585 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.867      ;
+; 1.600 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.886      ;
+; 1.600 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.886      ;
+; 1.601 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.887      ;
+; 1.601 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.887      ;
+; 1.601 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.887      ;
+; 1.601 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.887      ;
+; 1.615 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.901      ;
+; 1.615 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.901      ;
+; 1.632 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.918      ;
+; 1.636 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.922      ;
+; 1.636 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.922      ;
+; 1.639 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.925      ;
+; 1.640 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.926      ;
+; 1.646 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.928      ;
+; 1.646 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.928      ;
+; 1.657 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.943      ;
+; 1.662 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.948      ;
+; 1.665 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.947      ;
+; 1.680 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.966      ;
++-------+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLOCK_50'                                                                                                                                 ;
++--------+--------------+----------------+------------------+----------+------------+----------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                                                 ;
++--------+--------------+----------------+------------------+----------+------------+----------------------------------------------------------------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                                                                               ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50|combout                                                                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50|combout                                                                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0]                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0]                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk                                                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk                                                                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[0]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[0]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[10]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[10]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[11]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[11]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[12]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[12]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[13]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[13]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[14]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[14]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[15]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[15]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[16]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[16]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[17]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[17]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[18]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[18]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[19]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[19]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[1]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[1]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[20]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[20]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[21]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[21]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[22]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[22]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[23]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[23]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[24]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[24]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[25]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[25]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[2]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[2]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[3]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[3]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[4]|clk                   ;
++--------+--------------+----------------+------------------+----------+------------+----------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 6.572 ; 6.572 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 6.572 ; 6.572 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 6.572 ; 6.572 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 6.572 ; 6.572 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------+
+; Fast Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -0.642 ; -5.258        ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Fast Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.353 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.380 ; -27.380            ;
++----------+--------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLOCK_50'                                                                                                                                                                                                                                   ;
++--------+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                              ; To Node                                                                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.642 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.671      ;
+; -0.607 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.636      ;
+; -0.592 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.621      ;
+; -0.573 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.602      ;
+; -0.572 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.601      ;
+; -0.557 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.586      ;
+; -0.538 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.567      ;
+; -0.538 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.567      ;
+; -0.537 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.566      ;
+; -0.522 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.551      ;
+; -0.503 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.532      ;
+; -0.503 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.532      ;
+; -0.502 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.531      ;
+; -0.487 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.516      ;
+; -0.483 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.512      ;
+; -0.468 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.497      ;
+; -0.468 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.497      ;
+; -0.452 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.481      ;
+; -0.448 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.477      ;
+; -0.433 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.462      ;
+; -0.433 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.462      ;
+; -0.413 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.442      ;
+; -0.408 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.437      ;
+; -0.408 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.437      ;
+; -0.398 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.427      ;
+; -0.378 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.407      ;
+; -0.373 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.402      ;
+; -0.373 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.402      ;
+; -0.358 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.387      ;
+; -0.358 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.387      ;
+; -0.343 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.372      ;
+; -0.339 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.368      ;
+; -0.338 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.367      ;
+; -0.338 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.367      ;
+; -0.338 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.367      ;
+; -0.323 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.352      ;
+; -0.323 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.352      ;
+; -0.304 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.333      ;
+; -0.304 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.333      ;
+; -0.303 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.332      ;
+; -0.303 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.332      ;
+; -0.303 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.332      ;
+; -0.288 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.317      ;
+; -0.288 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.317      ;
+; -0.288 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.317      ;
+; -0.269 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.298      ;
+; -0.269 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.298      ;
+; -0.269 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.298      ;
+; -0.268 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.297      ;
+; -0.268 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.297      ;
+; -0.268 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.297      ;
+; -0.253 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.282      ;
+; -0.253 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.282      ;
+; -0.253 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.282      ;
+; -0.249 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.278      ;
+; -0.234 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.263      ;
+; -0.234 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.263      ;
+; -0.234 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.263      ;
+; -0.233 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.262      ;
+; -0.233 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.262      ;
+; -0.221 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.250      ;
+; -0.218 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.247      ;
+; -0.218 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.247      ;
+; -0.218 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.247      ;
+; -0.214 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.243      ;
+; -0.199 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.228      ;
+; -0.199 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.228      ;
+; -0.199 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.228      ;
+; -0.198 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.227      ;
+; -0.198 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.227      ;
+; -0.186 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.215      ;
+; -0.186 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.215      ;
+; -0.183 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.212      ;
+; -0.183 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.212      ;
+; -0.179 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.208      ;
+; -0.174 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.203      ;
+; -0.164 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.193      ;
+; -0.164 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.193      ;
+; -0.164 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.193      ;
+; -0.163 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.192      ;
+; -0.151 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.180      ;
+; -0.151 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.180      ;
+; -0.148 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.177      ;
+; -0.148 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.177      ;
+; -0.146 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.175      ;
+; -0.144 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.173      ;
+; -0.139 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.168      ;
+; -0.129 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.158      ;
+; -0.129 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.158      ;
+; -0.129 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.158      ;
+; -0.124 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.153      ;
+; -0.116 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.145      ;
+; -0.116 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.145      ;
+; -0.113 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.142      ;
+; -0.111 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.140      ;
+; -0.109 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.138      ;
+; -0.104 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.133      ;
+; -0.104 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.133      ;
+; -0.094 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.123      ;
+; -0.094 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 1.123      ;
++--------+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLOCK_50'                                                                                                                                                                                                                                   ;
++-------+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                              ; To Node                                                                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.353 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.505      ;
+; 0.356 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.508      ;
+; 0.356 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.508      ;
+; 0.356 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.508      ;
+; 0.356 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.508      ;
+; 0.357 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.509      ;
+; 0.358 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.369 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.370 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.522      ;
+; 0.372 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.491 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.643      ;
+; 0.494 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.646      ;
+; 0.494 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.646      ;
+; 0.494 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.646      ;
+; 0.495 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.647      ;
+; 0.496 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.497 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.649      ;
+; 0.497 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.649      ;
+; 0.497 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.649      ;
+; 0.509 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.661      ;
+; 0.509 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.661      ;
+; 0.509 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.661      ;
+; 0.509 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.661      ;
+; 0.509 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.661      ;
+; 0.509 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.661      ;
+; 0.510 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.662      ;
+; 0.510 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.662      ;
+; 0.510 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.662      ;
+; 0.510 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.662      ;
+; 0.510 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.662      ;
+; 0.526 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.678      ;
+; 0.529 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.681      ;
+; 0.529 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.681      ;
+; 0.529 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.681      ;
+; 0.530 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.682      ;
+; 0.531 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.683      ;
+; 0.532 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.684      ;
+; 0.532 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.684      ;
+; 0.544 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.696      ;
+; 0.544 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.696      ;
+; 0.544 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.696      ;
+; 0.544 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.696      ;
+; 0.544 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.696      ;
+; 0.544 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.696      ;
+; 0.545 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.697      ;
+; 0.545 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.697      ;
+; 0.545 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.697      ;
+; 0.547 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.003     ; 0.696      ;
+; 0.549 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.701      ;
+; 0.552 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.704      ;
+; 0.561 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.713      ;
+; 0.564 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.716      ;
+; 0.564 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.716      ;
+; 0.564 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.716      ;
+; 0.565 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.717      ;
+; 0.566 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.718      ;
+; 0.566 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.718      ;
+; 0.567 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.719      ;
+; 0.579 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.579 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.579 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.579 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.579 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.580 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.732      ;
+; 0.582 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.003     ; 0.731      ;
+; 0.584 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.736      ;
+; 0.587 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.739      ;
+; 0.587 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.003     ; 0.736      ;
+; 0.596 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.748      ;
+; 0.599 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.751      ;
+; 0.599 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.751      ;
+; 0.600 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.752      ;
+; 0.601 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.753      ;
+; 0.604 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.756      ;
+; 0.604 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.756      ;
+; 0.614 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.766      ;
+; 0.614 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.766      ;
+; 0.614 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.766      ;
+; 0.614 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.766      ;
+; 0.614 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.766      ;
+; 0.617 ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.003     ; 0.766      ;
++-------+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLOCK_50'                                                                                                                                 ;
++--------+--------------+----------------+------------------+----------+------------+----------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                                                 ;
++--------+--------------+----------------+------------------+----------+------------+----------------------------------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                                                                               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[16] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[17] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[18] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[19] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[20] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[21] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[22] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[23] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[24] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[25] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; my_counter:clkdiv|lpm_counter:LPM_COUNTER_component|cntr_cmh:auto_generated|safe_q[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50|combout                                                                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50|combout                                                                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0]                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0]                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk                                                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk                                                                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[0]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[0]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[10]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[10]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[11]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[11]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[12]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[12]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[13]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[13]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[14]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[14]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[15]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[15]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[16]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[16]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[17]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[17]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[18]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[18]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[19]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[19]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[1]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[1]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[20]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[20]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[21]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[21]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[22]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[22]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[23]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[23]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[24]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[24]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[25]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[25]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[2]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[2]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[3]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[3]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkdiv|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[4]|clk                   ;
++--------+--------------+----------------+------------------+----------+------------+----------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 3.609 ; 3.609 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 3.609 ; 3.609 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 3.609 ; 3.609 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 3.609 ; 3.609 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.882  ; 0.353 ; N/A      ; N/A     ; -1.631              ;
+;  CLOCK_50        ; -2.882  ; 0.353 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -45.033 ; 0.0   ; 0.0      ; 0.0     ; -33.403             ;
+;  CLOCK_50        ; -45.033 ; 0.000 ; N/A      ; N/A     ; -33.403             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 6.572 ; 6.572 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 6.572 ; 6.572 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 3.609 ; 3.609 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 3.609 ; 3.609 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 351      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 351      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 1     ; 1    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Thu Nov 16 20:12:50 2023
+Info: Command: quartus_sta clock_test -c clock_test
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'clock_test.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.882
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.882       -45.033 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.960
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.960         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -33.403 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.642
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.642        -5.258 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.353
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.353         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -27.380 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4535 megabytes
+    Info: Processing ended: Thu Nov 16 20:12:51 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
