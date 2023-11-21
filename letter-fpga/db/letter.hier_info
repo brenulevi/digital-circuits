@@ -64,7 +64,7 @@ LEDG[7] <= <GND>
 
 |letter|clock_counter:clock_counter1
 CLOCK_50 => lpm_counter:LPM_COUNTER_component.clock
-CLOCK_1HZ <= lpm_counter:LPM_COUNTER_component.q[22]
+CLOCK_4HZ <= lpm_counter:LPM_COUNTER_component.q[23]
 
 
 |letter|clock_counter:clock_counter1|lpm_counter:LPM_COUNTER_component

@@ -44,7 +44,7 @@ ENTITY clock_counter IS
 	(
 		CLOCK_50		: IN STD_LOGIC;
 		--q		: OUT STD_LOGIC_VECTOR (25 DOWNTO 0);
-		CLOCK_1HZ : OUT STD_LOGIC
+		CLOCK_4HZ : OUT STD_LOGIC
 	);
 END clock_counter;
 
@@ -70,7 +70,7 @@ ARCHITECTURE SYN OF clock_counter IS
 
 BEGIN
 	--q    <= sub_wire0(25 DOWNTO 0);
-	CLOCK_1HZ <= sub_wire0(22);
+	CLOCK_4HZ <= sub_wire0(23);
 
 	LPM_COUNTER_component : LPM_COUNTER
 	GENERIC MAP (
