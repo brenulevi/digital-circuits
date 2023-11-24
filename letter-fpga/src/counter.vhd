@@ -5,7 +5,7 @@ entity counter is
 	port (
 		CLK : in std_logic;
 		RST : in std_logic;
-		OTPT : out std_logic_vector(2 downto 0)
+		OTPT : out std_logic_vector(3 downto 0)
 	);
 end entity counter;
 
@@ -18,12 +18,13 @@ architecture counter_arch of counter is
 		);
 	end component flipflop;
 
-	signal count : std_logic_vector(2 downto 0);
-	signal nQ1, nQ2, nQ3 : std_logic;
+	signal count : std_logic_vector(3 downto 0);
+	signal nQ1, nQ2, nQ3, nQ4 : std_logic;
 begin
 	flipflop1 : flipflop port map (CLK => CLK, J => '1', K => '1', Q => count(0), nQ => nQ1);
 	flipflop2 : flipflop port map (CLK => nQ1, J => '1', K => '1', Q => count(1), nQ => nQ2);
 	flipflop3 : flipflop port map (CLK => nQ2, J => '1', K => '1', Q => count(2), nQ => nQ3);
+	flipflop4 : flipflop port map (CLK => nQ3, J => '1', K => '1', Q => count(3), nQ => nQ4);
 	
 	OTPT <= count;
 

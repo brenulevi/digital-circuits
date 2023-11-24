@@ -3,35 +3,43 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'CLOCK_50'
-Slack : -2.597
-TNS   : -37.610
+Slack : -2.596
+TNS   : -37.924
 
-Type  : Slow Model Setup 'counter:counter1|flipflop:flipflop2|Q'
+Type  : Slow Model Setup 'counter:counter1|flipflop:flipflop3|Q'
 Slack : 0.307
 TNS   : 0.000
 
+Type  : Slow Model Setup 'counter:counter1|flipflop:flipflop2|Q'
+Slack : 1.126
+TNS   : 0.000
+
 Type  : Slow Model Setup 'counter:counter1|flipflop:flipflop1|Q'
-Slack : 1.039
+Slack : 3.070
 TNS   : 0.000
 
 Type  : Slow Model Setup 'KEY[0]'
-Slack : 3.129
+Slack : 4.278
 TNS   : 0.000
 
 Type  : Slow Model Hold 'KEY[0]'
-Slack : -2.877
-TNS   : -2.877
+Slack : -4.026
+TNS   : -4.026
 
 Type  : Slow Model Hold 'counter:counter1|flipflop:flipflop1|Q'
-Slack : -0.787
-TNS   : -0.787
+Slack : -2.818
+TNS   : -2.818
 
 Type  : Slow Model Hold 'counter:counter1|flipflop:flipflop2|Q'
+Slack : -0.874
+TNS   : -0.874
+
+Type  : Slow Model Hold 'counter:counter1|flipflop:flipflop3|Q'
 Slack : 0.445
 TNS   : 0.000
 
 Type  : Slow Model Hold 'CLOCK_50'
-Slack : 0.506
+Slack : 0.629
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
@@ -50,31 +58,43 @@ Type  : Slow Model Minimum Pulse Width 'counter:counter1|flipflop:flipflop2|Q'
 Slack : -0.611
 TNS   : -1.222
 
-Type  : Fast Model Setup 'CLOCK_50'
-Slack : -0.544
-TNS   : -3.912
+Type  : Slow Model Minimum Pulse Width 'counter:counter1|flipflop:flipflop3|Q'
+Slack : -0.611
+TNS   : -1.222
 
-Type  : Fast Model Setup 'counter:counter1|flipflop:flipflop2|Q'
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : -0.673
+TNS   : -4.030
+
+Type  : Fast Model Setup 'counter:counter1|flipflop:flipflop3|Q'
 Slack : 0.665
 TNS   : 0.000
 
+Type  : Fast Model Setup 'counter:counter1|flipflop:flipflop2|Q'
+Slack : 0.843
+TNS   : 0.000
+
 Type  : Fast Model Setup 'counter:counter1|flipflop:flipflop1|Q'
-Slack : 0.787
+Slack : 1.683
 TNS   : 0.000
 
 Type  : Fast Model Setup 'KEY[0]'
-Slack : 1.730
+Slack : 2.218
 TNS   : 0.000
 
 Type  : Fast Model Hold 'KEY[0]'
-Slack : -1.350
-TNS   : -1.350
+Slack : -1.838
+TNS   : -1.838
 
 Type  : Fast Model Hold 'counter:counter1|flipflop:flipflop1|Q'
-Slack : -0.407
-TNS   : -0.407
+Slack : -1.303
+TNS   : -1.303
 
 Type  : Fast Model Hold 'counter:counter1|flipflop:flipflop2|Q'
+Slack : -0.463
+TNS   : -0.463
+
+Type  : Fast Model Hold 'counter:counter1|flipflop:flipflop3|Q'
 Slack : 0.215
 TNS   : 0.000
 
@@ -95,6 +115,10 @@ Slack : -0.500
 TNS   : -1.000
 
 Type  : Fast Model Minimum Pulse Width 'counter:counter1|flipflop:flipflop2|Q'
+Slack : -0.500
+TNS   : -1.000
+
+Type  : Fast Model Minimum Pulse Width 'counter:counter1|flipflop:flipflop3|Q'
 Slack : -0.500
 TNS   : -1.000
 
