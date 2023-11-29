@@ -1,5 +1,9 @@
 Assembler report for letter
+<<<<<<< HEAD
 Wed Nov 29 09:50:07 2023
+=======
+Thu Nov 23 23:28:12 2023
+>>>>>>> 1048efca1d5097151a87ee8c9eb2a68491c709f7
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -38,7 +42,11 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
+<<<<<<< HEAD
 ; Assembler Status      ; Successful - Wed Nov 29 09:50:07 2023 ;
+=======
+; Assembler Status      ; Successful - Thu Nov 23 23:28:12 2023 ;
+>>>>>>> 1048efca1d5097151a87ee8c9eb2a68491c709f7
 ; Revision Name         ; letter                                ;
 ; Top-level Entity Name ; letter                                ;
 ; Family                ; Cyclone II                            ;
@@ -94,8 +102,13 @@ applicable agreement for further details.
 ; Option         ; Setting                                                              ;
 +----------------+----------------------------------------------------------------------+
 ; Device         ; EP2C20F484C7                                                         ;
+<<<<<<< HEAD
 ; JTAG usercode  ; 0x001C15F0                                                           ;
 ; Checksum       ; 0x001C15F0                                                           ;
+=======
+; JTAG usercode  ; 0x001BA27B                                                           ;
+; Checksum       ; 0x001BA27B                                                           ;
+>>>>>>> 1048efca1d5097151a87ee8c9eb2a68491c709f7
 +----------------+----------------------------------------------------------------------+
 
 
@@ -106,7 +119,11 @@ applicable agreement for further details.
 +--------------------+------------------------------------------------------------------+
 ; Device             ; EPCS16                                                           ;
 ; JTAG usercode      ; 0x00000000                                                       ;
+<<<<<<< HEAD
 ; Checksum           ; 0x1DD7376E                                                       ;
+=======
+; Checksum           ; 0x1DD82447                                                       ;
+>>>>>>> 1048efca1d5097151a87ee8c9eb2a68491c709f7
 ; Compression Ratio  ; 3                                                                ;
 +--------------------+------------------------------------------------------------------+
 
@@ -117,14 +134,24 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+<<<<<<< HEAD
     Info: Processing started: Wed Nov 29 09:50:05 2023
+=======
+    Info: Processing started: Thu Nov 23 23:28:11 2023
+>>>>>>> 1048efca1d5097151a87ee8c9eb2a68491c709f7
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off letter-fpga -c letter
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
+<<<<<<< HEAD
     Info: Peak virtual memory: 4557 megabytes
     Info: Processing ended: Wed Nov 29 09:50:07 2023
     Info: Elapsed time: 00:00:02
+=======
+    Info: Peak virtual memory: 4541 megabytes
+    Info: Processing ended: Thu Nov 23 23:28:12 2023
+    Info: Elapsed time: 00:00:01
+>>>>>>> 1048efca1d5097151a87ee8c9eb2a68491c709f7
     Info: Total CPU time (on all processors): 00:00:01
 
 

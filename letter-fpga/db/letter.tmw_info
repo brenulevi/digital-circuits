@@ -1,3 +1,13 @@
+<<<<<<< HEAD
 start_analysis_synthesis:s:00:00:02
 start_fitter:s:00:00:05
 start_timing_analyzer:s:00:00:02
+=======
+start_full_compilation:s:00:00:14
+start_analysis_synthesis:s:00:00:03-start_full_compilation
+start_analysis_elaboration:s-start_full_compilation
+start_fitter:s:00:00:06-start_full_compilation
+start_assembler:s:00:00:02-start_full_compilation
+start_timing_analyzer:s:00:00:02-start_full_compilation
+start_eda_netlist_writer:s:00:00:01-start_full_compilation
+>>>>>>> 1048efca1d5097151a87ee8c9eb2a68491c709f7
